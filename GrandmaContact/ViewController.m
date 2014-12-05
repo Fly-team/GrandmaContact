@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "LWContactTableViewCell.h"
+#import "LWAddContactViewController.h"
+#import "LWDetailViewController.h"
 
 @interface ViewController ()
 
@@ -17,7 +19,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"All Contacts";
     _dataArr = [NSMutableArray arrayWithObjects:@"aaa",@"bbb",@"ccc", nil];
     _indexArr = [NSMutableArray arrayWithObjects:@"a",@"b",@"c", nil];
     [_myTableView registerNib:[UINib nibWithNibName:@"LWContactTableViewCell" bundle:nil] forCellReuseIdentifier:@"ContactCell"];
@@ -30,7 +31,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 1;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -52,7 +53,13 @@
 {
     return 80.;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //获取storyboard: 通过bundle根据storyboard的名字来获取我们的storyboard,
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    LWDetailViewController * detail = [story instantiateViewControllerWithIdentifier:@"DetailVC"];
+    [self.navigationController pushViewController:detail animated:YES];
+}
 - (IBAction)addContact:(id)sender {
 }
 - (IBAction)refreshAllContacts:(id)sender {

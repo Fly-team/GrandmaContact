@@ -16,6 +16,9 @@
 		18B94D5D1A31A1360058369D /* GrandmaContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B94D5C1A31A1360058369D /* GrandmaContactTests.m */; };
 		18B94D6A1A31AF730058369D /* LWContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B94D681A31AF730058369D /* LWContactTableViewCell.m */; };
 		18B94D6B1A31AF730058369D /* LWContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B94D691A31AF730058369D /* LWContactTableViewCell.xib */; };
+		18BAB9AA1A31E8DC0057F010 /* LWAddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9A91A31E8DC0057F010 /* LWAddContactViewController.m */; };
+		18BAB9AD1A31EB990057F010 /* LWDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9AC1A31EB990057F010 /* LWDetailViewController.m */; };
+		18BAB9B31A31F4F90057F010 /* ContactModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BAB9B21A31F4F90057F010 /* ContactModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,12 @@
 		18B94D671A31AF730058369D /* LWContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWContactTableViewCell.h; sourceTree = "<group>"; };
 		18B94D681A31AF730058369D /* LWContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWContactTableViewCell.m; sourceTree = "<group>"; };
 		18B94D691A31AF730058369D /* LWContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LWContactTableViewCell.xib; sourceTree = "<group>"; };
+		18BAB9A81A31E8DC0057F010 /* LWAddContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWAddContactViewController.h; sourceTree = "<group>"; };
+		18BAB9A91A31E8DC0057F010 /* LWAddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWAddContactViewController.m; sourceTree = "<group>"; };
+		18BAB9AB1A31EB990057F010 /* LWDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWDetailViewController.h; sourceTree = "<group>"; };
+		18BAB9AC1A31EB990057F010 /* LWDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWDetailViewController.m; sourceTree = "<group>"; };
+		18BAB9B11A31F4F90057F010 /* ContactModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactModel.h; sourceTree = "<group>"; };
+		18BAB9B21A31F4F90057F010 /* ContactModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,12 +95,16 @@
 		18B94D3F1A31A1360058369D /* GrandmaContact */ = {
 			isa = PBXGroup;
 			children = (
-				18B94D661A31AF350058369D /* Cell */,
 				18B94D441A31A1360058369D /* AppDelegate.h */,
 				18B94D451A31A1360058369D /* AppDelegate.m */,
 				18B94D471A31A1360058369D /* ViewController.h */,
 				18B94D481A31A1360058369D /* ViewController.m */,
 				18B94D4A1A31A1360058369D /* Main.storyboard */,
+				18BAB9AE1A31F4C60057F010 /* Model */,
+				18BAB9AF1A31F4C60057F010 /* Objects */,
+				18BAB9B01A31F4C60057F010 /* tools */,
+				18BAB9A71A31E8AE0057F010 /* Controllers */,
+				18B94D661A31AF350058369D /* Cell */,
 				18B94D4D1A31A1360058369D /* Images.xcassets */,
 				18B94D4F1A31A1360058369D /* LaunchScreen.xib */,
 				18B94D401A31A1360058369D /* Supporting Files */,
@@ -133,6 +146,40 @@
 				18B94D691A31AF730058369D /* LWContactTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		18BAB9A71A31E8AE0057F010 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				18BAB9A81A31E8DC0057F010 /* LWAddContactViewController.h */,
+				18BAB9A91A31E8DC0057F010 /* LWAddContactViewController.m */,
+				18BAB9AB1A31EB990057F010 /* LWDetailViewController.h */,
+				18BAB9AC1A31EB990057F010 /* LWDetailViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		18BAB9AE1A31F4C60057F010 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18BAB9B11A31F4F90057F010 /* ContactModel.h */,
+				18BAB9B21A31F4F90057F010 /* ContactModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		18BAB9AF1A31F4C60057F010 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		18BAB9B01A31F4C60057F010 /* tools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,8 +285,11 @@
 			files = (
 				18B94D491A31A1360058369D /* ViewController.m in Sources */,
 				18B94D6A1A31AF730058369D /* LWContactTableViewCell.m in Sources */,
+				18BAB9B31A31F4F90057F010 /* ContactModel.m in Sources */,
 				18B94D461A31A1360058369D /* AppDelegate.m in Sources */,
 				18B94D431A31A1360058369D /* main.m in Sources */,
+				18BAB9AD1A31EB990057F010 /* LWDetailViewController.m in Sources */,
+				18BAB9AA1A31E8DC0057F010 /* LWAddContactViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +482,7 @@
 				18B94D621A31A1360058369D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18B94D631A31A1360058369D /* Build configuration list for PBXNativeTarget "GrandmaContactTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +491,7 @@
 				18B94D651A31A1360058369D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

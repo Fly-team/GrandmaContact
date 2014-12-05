@@ -5,7 +5,7 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--通讯录-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -27,29 +27,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rMb-6h-SVn">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="tnz-iT-Irc">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tnz-iT-Irc" id="qhB-fr-cB4">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="JaL-1v-mYU">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JaL-1v-mYU" id="qLV-SK-4Bl">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="YC1-kS-KnR">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YC1-kS-KnR" id="NxU-Gr-Nxw">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="yJh-wQ-IvM" kind="push" id="jDS-Fa-SPt"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="neu-D4-sVu"/>
@@ -67,13 +44,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Iuh-FW-U3n" secondAttribute="trailing" constant="-16" id="tyJ-ui-wmg"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="MVl-3M-3US">
-                        <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="0S5-Le-3hz">
+                    <navigationItem key="navigationItem" title="通讯录" id="MVl-3M-3US">
+                        <barButtonItem key="leftBarButtonItem" title="刷新" id="0S5-Le-3hz">
                             <connections>
                                 <action selector="refreshAllContacts:" destination="BYZ-38-t0r" id="Tpd-Hg-PJQ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gUU-6B-ulX">
+                        <barButtonItem key="rightBarButtonItem" title="新增" id="gUU-6B-ulX">
                             <connections>
                                 <action selector="addContact:" destination="BYZ-38-t0r" id="Rjt-Yb-FB2"/>
                                 <segue destination="5Jy-Ri-tiZ" kind="push" id="rJI-Od-JBg"/>
@@ -88,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="1258" y="321"/>
         </scene>
-        <!--View Controller-->
+        <!--新增联系人-->
         <scene sceneID="4lv-SJ-bnr">
             <objects>
-                <viewController id="5Jy-Ri-tiZ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddVC" id="5Jy-Ri-tiZ" customClass="LWAddContactViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Sfw-kJ-iqg"/>
                         <viewControllerLayoutGuide type="bottom" id="QpW-uI-CYo"/>
@@ -101,16 +78,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XOs-Wg-oN3"/>
+                    <navigationItem key="navigationItem" title="新增联系人" id="XOs-Wg-oN3">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="Yfe-gh-owf">
+                            <connections>
+                                <action selector="saveOrcancelAction:" destination="5Jy-Ri-tiZ" id="1aV-CY-OJf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" tag="1" title="保存" id="rvK-eL-e3o">
+                            <connections>
+                                <action selector="saveOrcancelAction:" destination="5Jy-Ri-tiZ" id="qv0-8q-hxC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="06g-72-HYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1912" y="330"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="1dz-Ok-VLA">
             <objects>
-                <viewController id="yJh-wQ-IvM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailVC" id="yJh-wQ-IvM" customClass="LWDetailViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zc2-yq-ZTG"/>
                         <viewControllerLayoutGuide type="bottom" id="mHq-ZH-bzb"/>
@@ -118,11 +106,51 @@
                     <view key="view" contentMode="scaleToFill" id="bhr-jV-EaO">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4LO-nd-dxb">
+                                <rect key="frame" x="36" y="40" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.53725490200000003" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="MdS-Eu-0hp"/>
+                                    <constraint firstAttribute="width" constant="100" id="Qjn-I9-FgS"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qgS-yE-aJK">
+                                <rect key="frame" x="146" y="70" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="873-VE-jar"/>
+                                    <constraint firstAttribute="width" constant="100" id="wHg-i8-k23"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SuS-Px-pRf">
+                                <rect key="frame" x="16" y="155" width="518" height="181"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="181" id="F24-2Z-cl5"/>
+                                </constraints>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4LO-nd-dxb" firstAttribute="top" secondItem="zc2-yq-ZTG" secondAttribute="bottom" constant="20" id="9EX-wq-R8n"/>
+                            <constraint firstItem="SuS-Px-pRf" firstAttribute="leading" secondItem="bhr-jV-EaO" secondAttribute="leadingMargin" id="JkM-7n-rgj"/>
+                            <constraint firstItem="qgS-yE-aJK" firstAttribute="top" secondItem="zc2-yq-ZTG" secondAttribute="bottom" constant="50" id="KTv-Mc-Kyn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SuS-Px-pRf" secondAttribute="trailing" constant="50" id="NWV-T4-zAn"/>
+                            <constraint firstItem="SuS-Px-pRf" firstAttribute="top" secondItem="4LO-nd-dxb" secondAttribute="bottom" constant="15" id="bAz-ir-DXa"/>
+                            <constraint firstItem="4LO-nd-dxb" firstAttribute="leading" secondItem="bhr-jV-EaO" secondAttribute="leadingMargin" constant="20" id="u6o-sV-Pib"/>
+                            <constraint firstItem="qgS-yE-aJK" firstAttribute="leading" secondItem="4LO-nd-dxb" secondAttribute="trailing" constant="10" id="vlf-F6-cSe"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kW7-Et-USq"/>
+                    <connections>
+                        <outlet property="nameTextField" destination="qgS-yE-aJK" id="meP-cn-dBG"/>
+                        <outlet property="phoneTableView" destination="SuS-Px-pRf" id="nFW-vM-JwX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1z9-gj-bIG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem title="编辑" id="bFz-Sb-GON"/>
             </objects>
             <point key="canvasLocation" x="1892" y="1079"/>
         </scene>
