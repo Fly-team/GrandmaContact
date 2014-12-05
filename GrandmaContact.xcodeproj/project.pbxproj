@@ -14,6 +14,8 @@
 		18B94D4E1A31A1360058369D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18B94D4D1A31A1360058369D /* Images.xcassets */; };
 		18B94D511A31A1360058369D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B94D4F1A31A1360058369D /* LaunchScreen.xib */; };
 		18B94D5D1A31A1360058369D /* GrandmaContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B94D5C1A31A1360058369D /* GrandmaContactTests.m */; };
+		18B94D6A1A31AF730058369D /* LWContactTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B94D681A31AF730058369D /* LWContactTableViewCell.m */; };
+		18B94D6B1A31AF730058369D /* LWContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B94D691A31AF730058369D /* LWContactTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		18B94D561A31A1360058369D /* GrandmaContactTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrandmaContactTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B94D5B1A31A1360058369D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B94D5C1A31A1360058369D /* GrandmaContactTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrandmaContactTests.m; sourceTree = "<group>"; };
+		18B94D671A31AF730058369D /* LWContactTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWContactTableViewCell.h; sourceTree = "<group>"; };
+		18B94D681A31AF730058369D /* LWContactTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWContactTableViewCell.m; sourceTree = "<group>"; };
+		18B94D691A31AF730058369D /* LWContactTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LWContactTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +86,7 @@
 		18B94D3F1A31A1360058369D /* GrandmaContact */ = {
 			isa = PBXGroup;
 			children = (
+				18B94D661A31AF350058369D /* Cell */,
 				18B94D441A31A1360058369D /* AppDelegate.h */,
 				18B94D451A31A1360058369D /* AppDelegate.m */,
 				18B94D471A31A1360058369D /* ViewController.h */,
@@ -117,6 +123,16 @@
 				18B94D5B1A31A1360058369D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18B94D661A31AF350058369D /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18B94D671A31AF730058369D /* LWContactTableViewCell.h */,
+				18B94D681A31AF730058369D /* LWContactTableViewCell.m */,
+				18B94D691A31AF730058369D /* LWContactTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18B94D4C1A31A1360058369D /* Main.storyboard in Resources */,
+				18B94D6B1A31AF730058369D /* LWContactTableViewCell.xib in Resources */,
 				18B94D511A31A1360058369D /* LaunchScreen.xib in Resources */,
 				18B94D4E1A31A1360058369D /* Images.xcassets in Resources */,
 			);
@@ -220,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18B94D491A31A1360058369D /* ViewController.m in Sources */,
+				18B94D6A1A31AF730058369D /* LWContactTableViewCell.m in Sources */,
 				18B94D461A31A1360058369D /* AppDelegate.m in Sources */,
 				18B94D431A31A1360058369D /* main.m in Sources */,
 			);
