@@ -50,7 +50,7 @@
 - (IBAction)addCell:(id)sender
 {
     if ([(NSString *)[_phoneNumberArr lastObject] isEqualToString:@""]) {
-        [SVProgressHUD showErrorWithStatus:@""];
+        [SVProgressHUD showErrorWithStatus:@"填写后才可增加"];
         return;
     }
     
