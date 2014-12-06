@@ -12,6 +12,7 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     _im = [[UIImageView alloc] initWithFrame:CGRectMake(20, 10, 60, 60)];
     _im.backgroundColor = [UIColor redColor];
     [self addSubview:_im];

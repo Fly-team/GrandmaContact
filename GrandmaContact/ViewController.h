@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataControl.h"
 
 @interface ViewController : UIViewController<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *myTableView;
 @property (nonatomic, strong) NSMutableArray * dataArr;
 @property (nonatomic, strong) NSMutableArray * indexArr;
+@property (nonatomic, strong) NSMutableArray * sectionHeadsKeys;
+@property (nonatomic, strong) NSMutableArray * sortedDataArr;
 
 @end
 

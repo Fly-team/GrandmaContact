@@ -7,6 +7,7 @@
 //
 
 #import "LWDetailViewController.h"
+#import "LWEditViewController.h"
 
 @interface LWDetailViewController ()
 
@@ -16,7 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIBarButtonItem * rightItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editAction)];
+    self.navigationItem.rightBarButtonItem = rightItem;
+    
+    _nameLabel.text = _contact.name;
     // Do any additional setup after loading the view.
+}
+- (void)editAction
+{
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    LWEditViewController * edit = [story instantiateViewControllerWithIdentifier:@"EditVC"];
+    [self.navigationController pushViewController:edit animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {

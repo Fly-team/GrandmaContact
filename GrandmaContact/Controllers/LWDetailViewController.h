@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DataControl.h"
 
 @interface LWDetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UITableView *phoneTableView;
+@property (weak, nonatomic) IBOutlet UIImageView *im;
 
+@property (nonatomic, strong) ContactModel * contact;
 @end

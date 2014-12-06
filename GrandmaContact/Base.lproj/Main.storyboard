@@ -24,9 +24,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="fnR-GB-9Mi"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="rMb-6h-SVn">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="rMb-6h-SVn">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="neu-D4-sVu"/>
@@ -115,15 +115,6 @@
                                     <constraint firstAttribute="width" constant="100" id="Qjn-I9-FgS"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qgS-yE-aJK">
-                                <rect key="frame" x="146" y="70" width="100" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="873-VE-jar"/>
-                                    <constraint firstAttribute="width" constant="100" id="wHg-i8-k23"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SuS-Px-pRf">
                                 <rect key="frame" x="16" y="155" width="518" height="181"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -131,21 +122,29 @@
                                     <constraint firstAttribute="height" constant="181" id="F24-2Z-cl5"/>
                                 </constraints>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2vw-f4-3nG">
+                                <rect key="frame" x="144" y="57" width="390" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="2vw-f4-3nG" firstAttribute="top" secondItem="zc2-yq-ZTG" secondAttribute="bottom" constant="37" id="4dX-DI-x4s"/>
                             <constraint firstItem="4LO-nd-dxb" firstAttribute="top" secondItem="zc2-yq-ZTG" secondAttribute="bottom" constant="20" id="9EX-wq-R8n"/>
                             <constraint firstItem="SuS-Px-pRf" firstAttribute="leading" secondItem="bhr-jV-EaO" secondAttribute="leadingMargin" id="JkM-7n-rgj"/>
-                            <constraint firstItem="qgS-yE-aJK" firstAttribute="top" secondItem="zc2-yq-ZTG" secondAttribute="bottom" constant="50" id="KTv-Mc-Kyn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SuS-Px-pRf" secondAttribute="trailing" constant="50" id="NWV-T4-zAn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2vw-f4-3nG" secondAttribute="trailing" constant="50" id="YlO-Nf-1yY"/>
                             <constraint firstItem="SuS-Px-pRf" firstAttribute="top" secondItem="4LO-nd-dxb" secondAttribute="bottom" constant="15" id="bAz-ir-DXa"/>
                             <constraint firstItem="4LO-nd-dxb" firstAttribute="leading" secondItem="bhr-jV-EaO" secondAttribute="leadingMargin" constant="20" id="u6o-sV-Pib"/>
-                            <constraint firstItem="qgS-yE-aJK" firstAttribute="leading" secondItem="4LO-nd-dxb" secondAttribute="trailing" constant="10" id="vlf-F6-cSe"/>
+                            <constraint firstItem="2vw-f4-3nG" firstAttribute="leading" secondItem="4LO-nd-dxb" secondAttribute="trailing" constant="8" id="yQT-r8-UsZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="kW7-Et-USq"/>
                     <connections>
-                        <outlet property="nameTextField" destination="qgS-yE-aJK" id="meP-cn-dBG"/>
+                        <outlet property="im" destination="4LO-nd-dxb" id="EdT-i6-G80"/>
+                        <outlet property="nameLabel" destination="2vw-f4-3nG" id="Ih6-Qh-b8b"/>
                         <outlet property="phoneTableView" destination="SuS-Px-pRf" id="nFW-vM-JwX"/>
                     </connections>
                 </viewController>
@@ -153,6 +152,24 @@
                 <barButtonItem title="编辑" id="bFz-Sb-GON"/>
             </objects>
             <point key="canvasLocation" x="1892" y="1079"/>
+        </scene>
+        <!--Edit View Controller-->
+        <scene sceneID="FYN-j3-lOh">
+            <objects>
+                <viewController storyboardIdentifier="EditVC" id="ScS-Pl-ye2" customClass="LWEditViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="BhQ-9E-EOg"/>
+                        <viewControllerLayoutGuide type="bottom" id="l53-Uc-bGc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QOs-5t-vfy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JrT-6C-Jb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1892" y="1762"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="t08-Kx-lge">
