@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface ContactModel : NSObject
+@property (nonatomic, copy) NSString * lastName;//上一次的名字
 @property (nonatomic, copy) NSString * name;
-@property (nonatomic, copy) NSString * iconName;
 @property (nonatomic, copy) NSString * phoneNumber;
 
 @end

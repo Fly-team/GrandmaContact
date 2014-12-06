@@ -20,4 +20,5 @@
 - (BOOL)createContactTable;
 - (NSMutableArray*)getPhoneNumbersByContact:(ContactModel *)contact;
 - (NSMutableArray*)getAllContacts;
+- (void)insertContactWithContact:(ContactModel *)contact;
 @end

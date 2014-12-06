@@ -52,7 +52,7 @@
     }
     NSArray * arr = _sortedDataArr[indexPath.section];
     ContactModel * contact = [(ChineseString*)arr[indexPath.row] contact];
-    cell.nameLabel.text = contact.name;
+    cell.nameLabel.text = contact.lastName;
 
     return cell;
 }
@@ -100,7 +100,7 @@
     for(int i = 0; i < [arrToSort count]; i++) {
         ChineseString *chineseString=[[ChineseString alloc]init];
         ContactModel * contact = _dataArr[i];
-        chineseString.string = contact.name;
+        chineseString.string = contact.lastName;
         chineseString.contact = contact;
         if(chineseString.string==nil){
             chineseString.string=@"";

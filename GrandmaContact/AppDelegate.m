@@ -17,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.imageManager = [ImageManager sharedInstance];
+    self.data = [[DataControl alloc] init];
     [UITextField appearance].clearButtonMode = UITextFieldViewModeWhileEditing;
     //    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 //    ViewController * vc = [[ViewController alloc] init];

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -13,20 +14,26 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6qw-Zd-Ryb">
-                        <rect key="frame" x="8" y="8" width="304" height="30"/>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5hg-dg-LeM">
+                        <rect key="frame" x="8" y="8" width="294" height="29"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <textInputTraits key="textInputTraits"/>
                         <connections>
-                            <action selector="doneAction:" destination="KGk-i7-Jjw" eventType="editingDidEndOnExit" id="wf7-29-9K3"/>
+                            <action selector="doneAction:" destination="KGk-i7-Jjw" eventType="editingDidEndOnExit" id="vWJ-DF-Yk9"/>
                         </connections>
                     </textField>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="5hg-dg-LeM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="GCi-WQ-GCR"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="5hg-dg-LeM" secondAttribute="bottom" constant="-2" id="a1x-r5-GuU"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="5hg-dg-LeM" secondAttribute="trailing" constant="10" id="dLo-Pz-Rst"/>
+                    <constraint firstItem="5hg-dg-LeM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="nTE-4W-g6E"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="textField" destination="6qw-Zd-Ryb" id="f4i-Db-deo"/>
+                <outlet property="textField" destination="5hg-dg-LeM" id="i7H-Uo-nAC"/>
             </connections>
-            <point key="canvasLocation" x="434" y="220"/>
+            <point key="canvasLocation" x="434" y="219"/>
         </tableViewCell>
     </objects>
 </document>

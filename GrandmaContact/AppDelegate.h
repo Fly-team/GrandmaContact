@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
 #import "ImageManager.h"
+#import "DataControl.h"
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (nonatomic, strong) ViewController * vc;
 @property (nonatomic, strong) ImageManager * imageManager;
+@property (nonatomic, strong) DataControl * data;
 @end
 

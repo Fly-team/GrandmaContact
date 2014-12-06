@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Header.h"
 #import "ContactModel.h"
+#import "AppDelegate.h"
 @interface LWEditViewController : UIViewController<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *im;
 @property (weak, nonatomic) IBOutlet UITextField *textField;

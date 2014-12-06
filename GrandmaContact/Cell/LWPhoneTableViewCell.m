@@ -15,7 +15,10 @@
 }
 - (IBAction)doneAction:(UITextField *)sender
 {
-
+    NSDictionary * dic = [NSDictionary dictionaryWithObjectsAndKeys:
+                          [NSNumber numberWithInteger:self.tag], @"cellTag",
+                          _textField.text,@"textStr", nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"changePhoneNumber" object:nil userInfo:dic];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

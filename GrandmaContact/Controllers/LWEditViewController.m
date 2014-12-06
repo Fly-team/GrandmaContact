@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changePhoneNumber:) name:@"changePhoneNumber" object:nil];
     UIBarButtonItem * lefttItem = [[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(saveOrCancelAction:)];
     lefttItem.tag = 0;
     UIBarButtonItem * rightItem = [[UIBarButtonItem alloc] initWithTitle:@"保存" style:UIBarButtonItemStylePlain target:self action:@selector(saveOrCancelAction:)];
@@ -32,12 +33,16 @@
         _im.image = [UIImage imageNamed:@"contact_icon.png"];
     }
     
-    _textField.text = _contact.name;
-    [_phoneTableView registerNib:[UINib nibWithNibName:@"LWPhoneTableViewCell" bundle:nil] forCellReuseIdentifier:@"PhoneCell"];
+    _textField.text = _contact.lastName;
+//    [_phoneTableView registerNib:[UINib nibWithNibName:@"LWPhoneTableViewCell" bundle:nil] forCellReuseIdentifier:@"PhoneCell"];
     
     _data = [[DataControl alloc] init];
     _phoneNumberArr = [_data getPhoneNumbersByContact:_contact];
     // Do any additional setup after loading the view.
+}
+- (IBAction)endNameTextField:(id)sender
+{
+    [sender resignFirstResponder];
 }
 - (IBAction)selectPhoto:(UITapGestureRecognizer *)sender
 {
@@ -67,7 +72,12 @@
             break;
             
         case 1://保存
-            
+        {
+            AppDelegate * app = (AppDelegate*)[UIApplication sharedApplication].delegate;
+            _contact.name = _textField.text;
+            _contact.phoneNumber = [_phoneNumberArr componentsJoinedByString:@"/"];
+            [app.data insertContactWithContact:_contact];
+        }
             break;
             
         default:
@@ -115,6 +125,14 @@
     }
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
+- (void)changePhoneNumber:(NSNotification *)noti
+{
+    NSDictionary * dic = noti.userInfo;
+    int index = [dic[@"cellTag"] integerValue];
+    NSString * str = dic[@"textStr"];
+    [_phoneNumberArr replaceObjectAtIndex:index withObject:str];
+    NSLog(@"%d  %@",index, str);
+}
 #pragma mark -------------tableView-----------------
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -128,8 +146,28 @@
         NSArray *nib=[[NSBundle mainBundle] loadNibNamed:@"LWPhoneTableViewCell" owner:self options:nil];
         cell = [nib lastObject];
     }
+    cell.tag = indexPath.row;
+    CGRect frame = cell.frame;
+    frame.size.width = _phoneTableView.frame.size.width;
+    cell.frame = frame;
+    
     cell.textField.text = _phoneNumberArr[indexPath.row];
     return cell;
+}
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle==UITableViewCellEditingStyleDelete) {
+        //        获取选中删除行索引值
+        NSInteger row = [indexPath row];
+        //        通过获取的索引值删除数组中的值
+        [_phoneNumberArr removeObjectAtIndex:row];
+        //        删除单元格的某一行时，在用动画效果实现删除过程
+        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }  
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {

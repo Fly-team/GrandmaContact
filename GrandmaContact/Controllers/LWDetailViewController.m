@@ -20,9 +20,9 @@
     UIBarButtonItem * rightItem = [[UIBarButtonItem alloc] initWithTitle:@"编辑" style:UIBarButtonItemStylePlain target:self action:@selector(editAction)];
     self.navigationItem.rightBarButtonItem = rightItem;
     
-    _nameLabel.text = _contact.name;
+    _nameLabel.text = _contact.lastName;
     NSFileManager * fileManager = [NSFileManager defaultManager];
-    NSString * fileName = [NSString stringWithFormat:@"%@_id.jpg",_contact.name];
+    NSString * fileName = [NSString stringWithFormat:@"%@_id.jpg",_contact.lastName];
     NSString * filePath = [DOCUMENT_PATH stringByAppendingPathComponent:fileName];
     if ([fileManager fileExistsAtPath:filePath isDirectory:NULL]) {
         _im.image = [UIImage imageWithContentsOfFile:filePath];
@@ -31,6 +31,7 @@
     }
     // Do any additional setup after loading the view.
 }
+
 - (void)editAction
 {
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
