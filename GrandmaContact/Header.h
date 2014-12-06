@@ -8,6 +8,7 @@
 
 #ifndef GrandmaContact_Header_h
 #define GrandmaContact_Header_h
+#define DOCUMENT_PATH [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0]
 
 
 #endif

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ContactModel.h"
 
 @interface LWContactTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-
+@property (nonatomic, strong) ContactModel * contact;
 @property (nonatomic, strong) UIImageView * im;
 @end

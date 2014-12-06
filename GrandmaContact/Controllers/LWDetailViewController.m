@@ -8,7 +8,7 @@
 
 #import "LWDetailViewController.h"
 #import "LWEditViewController.h"
-
+#import "Header.h"
 @interface LWDetailViewController ()
 
 @end
@@ -21,12 +21,21 @@
     self.navigationItem.rightBarButtonItem = rightItem;
     
     _nameLabel.text = _contact.name;
+    NSFileManager * fileManager = [NSFileManager defaultManager];
+    NSString * fileName = [NSString stringWithFormat:@"%@_id.jpg",_contact.name];
+    NSString * filePath = [DOCUMENT_PATH stringByAppendingPathComponent:fileName];
+    if ([fileManager fileExistsAtPath:filePath isDirectory:NULL]) {
+        _im.image = [UIImage imageWithContentsOfFile:filePath];
+    }else {
+        _im.image = [UIImage imageNamed:@"contact_icon.png"];
+    }
     // Do any additional setup after loading the view.
 }
 - (void)editAction
 {
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     LWEditViewController * edit = [story instantiateViewControllerWithIdentifier:@"EditVC"];
+    edit.contact = self.contact;
     [self.navigationController pushViewController:edit animated:NO];
 }
 

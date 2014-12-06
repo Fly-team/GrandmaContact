@@ -10,5 +10,7 @@
 
 @interface ContactModel : NSObject
 @property (nonatomic, copy) NSString * name;
+@property (nonatomic, copy) NSString * iconName;
 @property (nonatomic, copy) NSString * phoneNumber;
+
 @end

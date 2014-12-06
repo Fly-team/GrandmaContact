@@ -109,7 +109,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4LO-nd-dxb">
                                 <rect key="frame" x="36" y="40" width="100" height="100"/>
-                                <color key="backgroundColor" red="0.14117647059999999" green="0.53725490200000003" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="MdS-Eu-0hp"/>
                                     <constraint firstAttribute="width" constant="100" id="Qjn-I9-FgS"/>
@@ -164,10 +163,47 @@
                     <view key="view" contentMode="scaleToFill" id="QOs-5t-vfy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4Sa-0V-of8">
+                                <rect key="frame" x="36" y="40" width="100" height="100"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="NOr-Pv-jMe"/>
+                                    <constraint firstAttribute="height" constant="100" id="RCB-PX-7cI"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="eZN-li-1ok" appends="YES" id="jPD-PL-R53"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zn-fh-e9K">
+                                <rect key="frame" x="149" y="52" width="114" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="114" id="DUN-fO-8th"/>
+                                    <constraint firstAttribute="height" constant="30" id="m5c-bB-gmq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6zn-fh-e9K" firstAttribute="leading" secondItem="4Sa-0V-of8" secondAttribute="trailing" constant="13" id="EZm-mN-nEw"/>
+                            <constraint firstItem="4Sa-0V-of8" firstAttribute="leading" secondItem="QOs-5t-vfy" secondAttribute="leadingMargin" constant="20" id="SxG-k7-DP7"/>
+                            <constraint firstItem="4Sa-0V-of8" firstAttribute="top" secondItem="BhQ-9E-EOg" secondAttribute="bottom" constant="20" id="TxV-rj-xVP"/>
+                            <constraint firstItem="6zn-fh-e9K" firstAttribute="top" secondItem="BhQ-9E-EOg" secondAttribute="bottom" constant="32" id="zcE-pD-LFh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="im" destination="4Sa-0V-of8" id="SfI-PI-wHL"/>
+                        <outlet property="textField" destination="6zn-fh-e9K" id="RtD-j0-NXb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JrT-6C-Jb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="eZN-li-1ok">
+                    <connections>
+                        <action selector="selectPhoto:" destination="ScS-Pl-ye2" id="UQQ-eh-OEa"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1892" y="1762"/>
         </scene>

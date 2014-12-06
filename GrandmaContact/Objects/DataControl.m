@@ -23,7 +23,7 @@
         return YES;
     }
     BOOL temp = NO;
-    temp = [self.db executeUpdate:@"create table contactlist (name text,phonenumber text)"];
+    temp = [self.db executeUpdate:@"create table contactlist (name text,iconName text,phonenumber text)"];
     return temp;
 }
 -(NSMutableArray *)getAllContacts
@@ -33,6 +33,7 @@
     while ([re next]) {
         ContactModel * contact = [[ContactModel alloc] init];
         contact.name = [re stringForColumn:@"name"];
+        contact.iconName = [re stringForColumn:@"iconName"];
         contact.phoneNumber = [re stringForColumn:@"phonenumber"];
         [arr addObject:contact];
     }

@@ -19,6 +19,7 @@
 		18B713841A32827000E2B77C /* LWEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B713831A32827000E2B77C /* LWEditViewController.m */; };
 		18B7138A1A32853B00E2B77C /* ChineseString.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B713871A32853B00E2B77C /* ChineseString.m */; };
 		18B7138B1A32853B00E2B77C /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 18B713881A32853B00E2B77C /* pinyin.c */; };
+		18B7138E1A3290A900E2B77C /* contact_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B7138D1A3290A900E2B77C /* contact_icon.png */; };
 		18B94D431A31A1360058369D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B94D421A31A1360058369D /* main.m */; };
 		18B94D461A31A1360058369D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B94D451A31A1360058369D /* AppDelegate.m */; };
 		18B94D491A31A1360058369D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B94D481A31A1360058369D /* ViewController.m */; };
@@ -68,6 +69,7 @@
 		18B713871A32853B00E2B77C /* ChineseString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChineseString.m; sourceTree = "<group>"; };
 		18B713881A32853B00E2B77C /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
 		18B713891A32853B00E2B77C /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		18B7138D1A3290A900E2B77C /* contact_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact_icon.png; sourceTree = "<group>"; };
 		18B94D3D1A31A1360058369D /* GrandmaContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrandmaContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B94D411A31A1360058369D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B94D421A31A1360058369D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -143,6 +145,14 @@
 			path = Sort;
 			sourceTree = "<group>";
 		};
+		18B7138C1A3290A900E2B77C /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				18B7138D1A3290A900E2B77C /* contact_icon.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		18B94D341A31A1360058369D = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +185,7 @@
 				18BAB9B01A31F4C60057F010 /* tools */,
 				18BAB9A71A31E8AE0057F010 /* Controllers */,
 				18B94D661A31AF350058369D /* Cell */,
+				18B7138C1A3290A900E2B77C /* Resource */,
 				18B94D4D1A31A1360058369D /* Images.xcassets */,
 				18B94D4F1A31A1360058369D /* LaunchScreen.xib */,
 				18B94D401A31A1360058369D /* Supporting Files */,
@@ -343,6 +354,7 @@
 				18B94D6B1A31AF730058369D /* LWContactTableViewCell.xib in Resources */,
 				18B94D511A31A1360058369D /* LaunchScreen.xib in Resources */,
 				18B94D4E1A31A1360058369D /* Images.xcassets in Resources */,
+				18B7138E1A3290A900E2B77C /* contact_icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

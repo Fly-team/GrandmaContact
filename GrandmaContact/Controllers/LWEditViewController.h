@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface LWEditViewController : UIViewController
-
+#import "ContactModel.h"
+@interface LWEditViewController : UIViewController<UIActionSheetDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *im;
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+@property (nonatomic, strong) ContactModel * contact;
 @end

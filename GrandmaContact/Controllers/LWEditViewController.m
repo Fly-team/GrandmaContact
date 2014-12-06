@@ -7,7 +7,7 @@
 //
 
 #import "LWEditViewController.h"
-
+#import "Header.h"
 @interface LWEditViewController ()
 
 @end
@@ -23,8 +23,25 @@
     self.navigationItem.leftBarButtonItem = lefttItem;
     self.navigationItem.rightBarButtonItem = rightItem;
     
+    NSFileManager * fileManager = [NSFileManager defaultManager];
+    NSString * fileName = [NSString stringWithFormat:@"%@_id.jpg",_contact.name];
+    NSString * filePath = [DOCUMENT_PATH stringByAppendingPathComponent:fileName];
+    if ([fileManager fileExistsAtPath:filePath isDirectory:NULL]) {
+        _im.image = [UIImage imageWithContentsOfFile:filePath];
+    }else {
+        _im.image = [UIImage imageNamed:@"contact_icon.png"];
+    }
+
     
     // Do any additional setup after loading the view.
+}
+- (IBAction)selectPhoto:(UITapGestureRecognizer *)sender
+{
+    UIActionSheet * sheet = [[UIActionSheet alloc] initWithTitle:@"提示"
+                                                        delegate:self
+                                               cancelButtonTitle:@"取消"
+                                          destructiveButtonTitle:@"拍照" otherButtonTitles:@"从相册选择", nil];
+    [sheet showInView:self.view];
 }
 - (void)saveOrCancelAction:(UIBarButtonItem *)item
 {
@@ -41,6 +58,10 @@
             break;
     }
     [self.navigationController popViewControllerAnimated:NO];
+}
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"%d",buttonIndex);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
