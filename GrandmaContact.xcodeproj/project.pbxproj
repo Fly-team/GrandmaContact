@@ -20,6 +20,11 @@
 		18B7138A1A32853B00E2B77C /* ChineseString.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B713871A32853B00E2B77C /* ChineseString.m */; };
 		18B7138B1A32853B00E2B77C /* pinyin.c in Sources */ = {isa = PBXBuildFile; fileRef = 18B713881A32853B00E2B77C /* pinyin.c */; };
 		18B7138E1A3290A900E2B77C /* contact_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 18B7138D1A3290A900E2B77C /* contact_icon.png */; };
+		18B713911A329B2100E2B77C /* ImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B713901A329B2100E2B77C /* ImageManager.m */; };
+		18B713951A32BE5500E2B77C /* LWPhoneTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B713931A32BE5500E2B77C /* LWPhoneTableViewCell.m */; };
+		18B713961A32BE5500E2B77C /* LWPhoneTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18B713941A32BE5500E2B77C /* LWPhoneTableViewCell.xib */; };
+		18B7139C1A32C8FD00E2B77C /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18B713991A32C8FD00E2B77C /* SVProgressHUD.bundle */; };
+		18B7139D1A32C8FD00E2B77C /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B7139B1A32C8FD00E2B77C /* SVProgressHUD.m */; };
 		18B94D431A31A1360058369D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B94D421A31A1360058369D /* main.m */; };
 		18B94D461A31A1360058369D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B94D451A31A1360058369D /* AppDelegate.m */; };
 		18B94D491A31A1360058369D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B94D481A31A1360058369D /* ViewController.m */; };
@@ -70,6 +75,15 @@
 		18B713881A32853B00E2B77C /* pinyin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pinyin.c; sourceTree = "<group>"; };
 		18B713891A32853B00E2B77C /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
 		18B7138D1A3290A900E2B77C /* contact_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = contact_icon.png; sourceTree = "<group>"; };
+		18B7138F1A329B2100E2B77C /* ImageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageManager.h; sourceTree = "<group>"; };
+		18B713901A329B2100E2B77C /* ImageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageManager.m; sourceTree = "<group>"; };
+		18B713921A32BE5500E2B77C /* LWPhoneTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LWPhoneTableViewCell.h; sourceTree = "<group>"; };
+		18B713931A32BE5500E2B77C /* LWPhoneTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LWPhoneTableViewCell.m; sourceTree = "<group>"; };
+		18B713941A32BE5500E2B77C /* LWPhoneTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LWPhoneTableViewCell.xib; sourceTree = "<group>"; };
+		18B713981A32C8FD00E2B77C /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		18B713991A32C8FD00E2B77C /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		18B7139A1A32C8FD00E2B77C /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		18B7139B1A32C8FD00E2B77C /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		18B94D3D1A31A1360058369D /* GrandmaContact.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrandmaContact.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B94D411A31A1360058369D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18B94D421A31A1360058369D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -153,6 +167,17 @@
 			path = Resource;
 			sourceTree = "<group>";
 		};
+		18B713971A32C8FD00E2B77C /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				18B713981A32C8FD00E2B77C /* SVProgressHUD-Prefix.pch */,
+				18B713991A32C8FD00E2B77C /* SVProgressHUD.bundle */,
+				18B7139A1A32C8FD00E2B77C /* SVProgressHUD.h */,
+				18B7139B1A32C8FD00E2B77C /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		18B94D341A31A1360058369D = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +251,9 @@
 				18B94D671A31AF730058369D /* LWContactTableViewCell.h */,
 				18B94D681A31AF730058369D /* LWContactTableViewCell.m */,
 				18B94D691A31AF730058369D /* LWContactTableViewCell.xib */,
+				18B713921A32BE5500E2B77C /* LWPhoneTableViewCell.h */,
+				18B713931A32BE5500E2B77C /* LWPhoneTableViewCell.m */,
+				18B713941A32BE5500E2B77C /* LWPhoneTableViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -257,6 +285,8 @@
 			children = (
 				18B713791A32783300E2B77C /* DataControl.h */,
 				18B7137A1A32783300E2B77C /* DataControl.m */,
+				18B7138F1A329B2100E2B77C /* ImageManager.h */,
+				18B713901A329B2100E2B77C /* ImageManager.m */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -264,6 +294,7 @@
 		18BAB9B01A31F4C60057F010 /* tools */ = {
 			isa = PBXGroup;
 			children = (
+				18B713971A32C8FD00E2B77C /* SVProgressHUD */,
 				18B713851A32853B00E2B77C /* Sort */,
 				18B713631A3277E700E2B77C /* FMDB */,
 			);
@@ -350,11 +381,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B7139C1A32C8FD00E2B77C /* SVProgressHUD.bundle in Resources */,
 				18B94D4C1A31A1360058369D /* Main.storyboard in Resources */,
 				18B94D6B1A31AF730058369D /* LWContactTableViewCell.xib in Resources */,
 				18B94D511A31A1360058369D /* LaunchScreen.xib in Resources */,
 				18B94D4E1A31A1360058369D /* Images.xcassets in Resources */,
 				18B7138E1A3290A900E2B77C /* contact_icon.png in Resources */,
+				18B713961A32BE5500E2B77C /* LWPhoneTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +413,7 @@
 				18B713721A3277E700E2B77C /* FMDatabase+InMemoryOnDiskIO.m in Sources */,
 				18B7138B1A32853B00E2B77C /* pinyin.c in Sources */,
 				18B713761A3277E700E2B77C /* FMDatabaseQueue.m in Sources */,
+				18B713911A329B2100E2B77C /* ImageManager.m in Sources */,
 				18B713771A3277E700E2B77C /* FMResultSet.m in Sources */,
 				18B713751A3277E700E2B77C /* FMDatabasePool.m in Sources */,
 				18B713841A32827000E2B77C /* LWEditViewController.m in Sources */,
@@ -388,6 +422,8 @@
 				18BAB9AD1A31EB990057F010 /* LWDetailViewController.m in Sources */,
 				18B713781A3277E700E2B77C /* SDBManager.m in Sources */,
 				18BAB9AA1A31E8DC0057F010 /* LWAddContactViewController.m in Sources */,
+				18B7139D1A32C8FD00E2B77C /* SVProgressHUD.m in Sources */,
+				18B713951A32BE5500E2B77C /* LWPhoneTableViewCell.m in Sources */,
 				18B713741A3277E700E2B77C /* FMDatabaseAdditions.m in Sources */,
 				18B7138A1A32853B00E2B77C /* ChineseString.m in Sources */,
 			);

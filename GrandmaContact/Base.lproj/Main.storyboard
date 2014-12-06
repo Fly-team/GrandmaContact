@@ -184,17 +184,47 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fHb-7j-CrC">
+                                <rect key="frame" x="16" y="163" width="518" height="208"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="208" id="cdg-77-9hv"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="ScS-Pl-ye2" id="pSy-rs-v59"/>
+                                    <outlet property="delegate" destination="ScS-Pl-ye2" id="eLG-AE-fEw"/>
+                                </connections>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rb7-Gv-dcv">
+                                <rect key="frame" x="488" y="125" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="GaS-Y1-MU3"/>
+                                    <constraint firstAttribute="width" constant="46" id="zSp-KY-nRj"/>
+                                </constraints>
+                                <state key="normal" title="添加">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addCell:" destination="ScS-Pl-ye2" eventType="touchUpInside" id="mxL-Qd-LSR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="rb7-Gv-dcv" secondAttribute="trailing" constant="50" id="DNv-eD-128"/>
                             <constraint firstItem="6zn-fh-e9K" firstAttribute="leading" secondItem="4Sa-0V-of8" secondAttribute="trailing" constant="13" id="EZm-mN-nEw"/>
                             <constraint firstItem="4Sa-0V-of8" firstAttribute="leading" secondItem="QOs-5t-vfy" secondAttribute="leadingMargin" constant="20" id="SxG-k7-DP7"/>
+                            <constraint firstItem="fHb-7j-CrC" firstAttribute="top" secondItem="4Sa-0V-of8" secondAttribute="bottom" constant="23" id="Ta3-c8-quA"/>
                             <constraint firstItem="4Sa-0V-of8" firstAttribute="top" secondItem="BhQ-9E-EOg" secondAttribute="bottom" constant="20" id="TxV-rj-xVP"/>
+                            <constraint firstItem="fHb-7j-CrC" firstAttribute="top" secondItem="rb7-Gv-dcv" secondAttribute="bottom" constant="8" id="dL2-PO-1g8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fHb-7j-CrC" secondAttribute="trailing" constant="50" id="lwp-Er-okI"/>
+                            <constraint firstItem="fHb-7j-CrC" firstAttribute="leading" secondItem="QOs-5t-vfy" secondAttribute="leadingMargin" id="r7x-we-Is1"/>
                             <constraint firstItem="6zn-fh-e9K" firstAttribute="top" secondItem="BhQ-9E-EOg" secondAttribute="bottom" constant="32" id="zcE-pD-LFh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="im" destination="4Sa-0V-of8" id="SfI-PI-wHL"/>
+                        <outlet property="phoneTableView" destination="fHb-7j-CrC" id="Uwp-Sn-sd2"/>
                         <outlet property="textField" destination="6zn-fh-e9K" id="RtD-j0-NXb"/>
                     </connections>
                 </viewController>

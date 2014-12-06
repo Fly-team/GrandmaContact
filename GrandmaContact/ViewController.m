@@ -12,7 +12,7 @@
 #import "LWDetailViewController.h"
 #import "pinyin.h"
 #import "ChineseString.h"
-
+#import "ImageManager.h"
 @interface ViewController ()
 
 @end

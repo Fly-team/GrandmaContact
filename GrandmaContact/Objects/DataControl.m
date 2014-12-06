@@ -26,6 +26,24 @@
     temp = [self.db executeUpdate:@"create table contactlist (name text,iconName text,phonenumber text)"];
     return temp;
 }
+-(NSMutableArray *)getPhoneNumbersByContact:(ContactModel *)contact
+{
+    NSMutableArray * arr = [NSMutableArray array];
+    NSString * tempstring = [self.db stringForQuery:@"select phonenumber from contactlist where name = ?",contact.name];
+    if (tempstring && ![tempstring isEqualToString:@""]) {
+        if ([tempstring containsString:@"/"]) {
+            NSArray * tempArr = [tempstring componentsSeparatedByString:@"/"];
+            for (NSString * str in tempArr) {
+                [arr addObject:str];
+            }
+        }else {
+            [arr addObject:tempstring];
+        }
+    }
+    
+    
+    return arr;
+}
 -(NSMutableArray *)getAllContacts
 {
     FMResultSet *re = [self.db executeQuery:@"select * from contactlist"];

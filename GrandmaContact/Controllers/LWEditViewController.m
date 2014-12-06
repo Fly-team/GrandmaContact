@@ -7,7 +7,7 @@
 //
 
 #import "LWEditViewController.h"
-#import "Header.h"
+#import "LWPhoneTableViewCell.h"
 @interface LWEditViewController ()
 
 @end
@@ -31,8 +31,12 @@
     }else {
         _im.image = [UIImage imageNamed:@"contact_icon.png"];
     }
-
     
+    _textField.text = _contact.name;
+    [_phoneTableView registerNib:[UINib nibWithNibName:@"LWPhoneTableViewCell" bundle:nil] forCellReuseIdentifier:@"PhoneCell"];
+    
+    _data = [[DataControl alloc] init];
+    _phoneNumberArr = [_data getPhoneNumbersByContact:_contact];
     // Do any additional setup after loading the view.
 }
 - (IBAction)selectPhoto:(UITapGestureRecognizer *)sender
@@ -42,6 +46,18 @@
                                                cancelButtonTitle:@"取消"
                                           destructiveButtonTitle:@"拍照" otherButtonTitles:@"从相册选择", nil];
     [sheet showInView:self.view];
+}
+- (IBAction)addCell:(id)sender
+{
+    if ([(NSString *)[_phoneNumberArr lastObject] isEqualToString:@""]) {
+        [SVProgressHUD showErrorWithStatus:@""];
+        return;
+    }
+    
+    [_phoneNumberArr addObject:@""];
+    NSIndexPath * index = [NSIndexPath indexPathForRow:_phoneNumberArr.count -1 inSection:0];
+    [_phoneTableView insertRowsAtIndexPaths:[NSArray arrayWithObject:index] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [_phoneTableView scrollToRowAtIndexPath:index atScrollPosition:UITableViewScrollPositionBottom animated:YES];
 }
 - (void)saveOrCancelAction:(UIBarButtonItem *)item
 {
@@ -62,6 +78,62 @@
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     NSLog(@"%d",buttonIndex);
+    UIImagePickerControllerSourceType sourceType = UIImagePickerControllerSourceTypeCamera;
+    switch (buttonIndex) {
+        case 0:
+            
+            break;
+        case 1:
+            sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            break;
+        case 2:
+            return;
+            break;
+            
+        default:
+            break;
+    }
+    
+    if ([UIImagePickerController isSourceTypeAvailable:sourceType]) {
+        UIImagePickerController * picker = [[UIImagePickerController alloc] init];
+        picker.delegate = self;
+        picker.sourceType = sourceType;
+        picker.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        [self presentViewController:picker animated:YES completion:nil];
+    }else {
+        NSLog(@"请使用真机");
+    }
+
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    NSString * type = [info objectForKey:UIImagePickerControllerMediaType];
+    if ([type isEqualToString:@"public.image"]) {
+        UIImage * image = [info objectForKey:UIImagePickerControllerOriginalImage];
+        self.im.image = nil;
+        self.im.image = image;
+    }
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+#pragma mark -------------tableView-----------------
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _phoneNumberArr.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString * cellIdentifier = @"PhoneCell";
+    LWPhoneTableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        NSArray *nib=[[NSBundle mainBundle] loadNibNamed:@"LWPhoneTableViewCell" owner:self options:nil];
+        cell = [nib lastObject];
+    }
+    cell.textField.text = _phoneNumberArr[indexPath.row];
+    return cell;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 44.;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -18,5 +18,6 @@
 
 //创建表
 - (BOOL)createContactTable;
+- (NSMutableArray*)getPhoneNumbersByContact:(ContactModel *)contact;
 - (NSMutableArray*)getAllContacts;
 @end
